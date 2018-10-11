@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const db = require('./db');
+
 router.use(bodyParser.json());
 
 router.get('/readall', (req, resp, next) => {
     db.Fleet.findAll().then((res) => {
-        resp.json(res.map(i => i.name));
+        resp.json(res);
     });  
 });
 
@@ -67,7 +68,5 @@ router.post('/delete', (req, resp, next) => {
         });
     });
 });
-
-
 
 module.exports = router;

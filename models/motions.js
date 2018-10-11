@@ -13,6 +13,13 @@ module.exports = (Sequelize, sequelize) => {
                         latitude: this.latitude,
                         longitude: this.longitude
                     }
+                },
+                latLngTime() {
+                    return {
+                        lat: this.latitude,
+                        lng: this.longitude,
+                        time: this.time
+                    }
                 }
             }
         });

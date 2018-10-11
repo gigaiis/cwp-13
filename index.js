@@ -2,12 +2,8 @@ const express = require('express');
 const app = express();
 
 app.use('/api', require('./routers/api'));
-app.all('/' , (req, res) =>
-{
-    res.send('cwp-13');
-});
 
-app.listen(3000, '127.0.0.1', () =>
+app.listen(3000, 'localhost', () =>
 {
-    console.log('Server started ...');
+    console.log('Wait connections');
 });

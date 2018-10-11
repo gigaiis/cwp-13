@@ -7,11 +7,6 @@ module.exports = (Sequelize, config) => {
             paranoid : true
         }
     });
-    sequelize.authenticate().then(() => {
-        console.log('Connection to database successful');
-    }).catch((err) => {
-        console.log('Unable to connect to database', err);
-    });
 
     const Fleet = require('../models/fleets')(Sequelize, sequelize);
     const Motion = require('../models/motions')(Sequelize, sequelize);
